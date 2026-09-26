@@ -1,0 +1,80 @@
+name: Submit game data
+description: Share a game fact with version and evidence for editorial review.
+title: "[Data]: "
+labels:
+  - data-submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Submissions are public and are reviewed before anything appears on the wiki. Do not include personal information or upload material you do not have permission to share.
+  - type: dropdown
+    id: entity_type
+    attributes:
+      label: Data type
+      options:
+        - Recipe
+        - Ingredient
+        - Fish
+        - Business or venue
+        - Shop, price, or location
+        - Unlock or quest
+        - Game version or patch
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: entity_name
+    attributes:
+      label: Name shown in game
+      placeholder: Exact English name if available
+    validations:
+      required: true
+  - type: input
+    id: game_version
+    attributes:
+      label: Game version or build
+      placeholder: Version number, build ID, or launch build
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Steam
+        - Epic Games Store
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: locale
+    attributes:
+      label: Game language
+      placeholder: English, Simplified Chinese, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What did you observe?
+      description: Record one specific fact or a short set of closely related facts. Preserve the wording shown in game when useful.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence links and context
+      description: Link to a public screenshot or video timestamp and explain where, when, and under what conditions it was observed.
+      placeholder: "URL, in-game location, game time/weather, vendor, quest state, and any other useful context"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Submission confirmation
+      options:
+        - label: I observed this myself or clearly identified the source, and I have permission to share the linked evidence.
+          required: true
+        - label: I understand that submission does not guarantee publication and that the wiki may summarize the fact in its own words.
+          required: true
