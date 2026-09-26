@@ -1,0 +1,51 @@
+name: Report a correction
+description: Flag an inaccurate or outdated statement on an existing wiki page.
+title: "[Correction]: "
+labels:
+  - content-correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Reports are public. Please do not include personal information or copyrighted files you cannot share.
+  - type: input
+    id: page_url
+    attributes:
+      label: Wiki page URL
+      placeholder: https://nivalisnightswiki.net/...
+    validations:
+      required: true
+  - type: textarea
+    id: current_content
+    attributes:
+      label: What is inaccurate or outdated?
+      description: Quote only the short phrase needed to identify the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: input
+    id: game_version
+    attributes:
+      label: Relevant game version or build
+      placeholder: Version number, build ID, launch build, or not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Provide an official source, public screenshot, or video timestamp that supports the correction.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have permission to share the linked evidence and understand that the report will be reviewed before publication.
+          required: true
